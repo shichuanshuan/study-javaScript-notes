@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 使用 Boolean() 函数
+        // 数字 --> 布尔
+        // 除了 0 和 NaN，其余的都是 true
+
+        // 字符串 --> 布尔
+        // 除了空串，其余都是 true
+
+        // - null 和 undefined 都会转换为 false
+        var a = 123;
+        a = -123; // true
+        a = 0; // false
+        a = Infinity; // true
+        a = NaN; // false
+        console.log(typeof a);
+        console.log(a);
+
+        console.log("==============");
+        a = Boolean(a);
+        console.log(typeof a);
+        console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

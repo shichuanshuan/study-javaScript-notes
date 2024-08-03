@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将其他类型数据转换为 Number
+        // 方式一，使用 Number() 函数, 
+        var aString = "123";
+        var a = Number(aString);
+
+        console.log(typeof a);
+        console.log(a);
+
+        // 字符串 --> 数字
+        // 非数字转换，则为 NaN。如果字符串是一个空串或者是一个全是空格的字符串，则为 0；
+        console.log("字符串 --> 数字 ========================");
+        var bString = "abc";
+        var b = Number(bString);
+        console.log(typeof b);
+        console.log(b);
+
+        // 布尔 --> 数字
+        // true 转成 1
+        // false 转成 0
+        console.log("布尔 --> 数字 ========================");
+        var cString = false;
+        var c = Number(cString);
+        console.log(typeof c);
+        console.log(c);
+
+        // Null --> 数字 0
+        console.log("Null --> 数字 ========================");
+        var dString = null;
+        var d = Number(dString);
+        console.log(typeof d);
+        console.log(d);
+
+        // undefined --> 数字 NaN
+        console.log("undefined --> 数字 ========================");
+        var eString = undefined;
+        var e = Number(eString);
+        console.log(typeof e);
+        console.log(e);
+
+        // 方式二 parseInt(); 可以将一个字符串中有效的整数内容去出来，然后转换为 Number
+        console.log("方式二 ========================");
+        var a = "123px";
+        a = parseInt(a);
+        console.log(typeof a);
+        console.log(a);
+
+        console.log("对于非String ========================");
+        var a = true;
+        a = parseInt(a);
+        console.log(typeof a);
+        console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

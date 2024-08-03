@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将其他类型转换为 String
+        // 方式一 使用 toString() 方法,注意 null 和 undefined 没有 toString 方法
+        var a = 123;
+        var aString = a.toString();
+        
+        var b = true;
+        var bString = b.toString();
+        console.log(typeof aString);
+        console.log(typeof bString);
+
+        var a = null;
+        // a = a.toString();
+        // console.log(typeof aString);
+
+        // 方式二 调用 String() 函数，来将 a 转换为字符串
+        // 使用 String() 函数做强制类型转换时，
+        // 对于 Number 和 Boolean 实际上就是调用 toString() 方法
+        // 但是对于 null 和 undefined，就不会调用 toString() 方法，
+        // 它会将 null 直接转换为 "null", 它会将 undefined 直接转换为 "undefined"
+        console.log("===========");
+        var c = 123;
+        var cString;
+
+        cString = String(c);
+        console.log(typeof cString)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
