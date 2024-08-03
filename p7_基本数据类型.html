@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        在 JS 中一共有六种数据类型
+        String  字符串
+        Number  数值
+        Boolean 布尔
+        Null    空值
+        Undefined 未定义
+        Object  对象
+
+        其中 String Number Boolean Null Undefined 属于基本数据类型
+        而 Object 属于引用数据类型
+        */
+
+        var name = "shics";
+        var age = 27;
+        console.log(name);
+        console.log(typeof name);
+        console.log(typeof age);
+
+        /*
+        Number.Max_VALUE
+        如果使用 Number 表示的数字超过了最大值，则会返回
+        Infinity 表示正无穷
+        -Infinity 表示负无穷
+        */
+        var a = Number.MAX_VALUE * -Number.MAX_VALUE;
+        console.log(a);
+
+        /*
+        NaN 是一个特殊的数字，表示 Not a Number
+        使用 typeof 检测一个 NaN 也会返回 number
+        */
+
+        a = "abc" * "abc";
+
+        a = NaN;
+
+        console.log(a);
+        console.log(typeof a);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

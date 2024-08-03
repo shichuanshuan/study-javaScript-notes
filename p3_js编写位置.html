@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 2. 今天将 js 代码编写到外部 js 文件中，然后通过 script 标签引入 
+     推荐使用
+    -->
+    <script type="text/javascript" src="js/p3.js">
+        // 外部引用了 js 文件，内部就不会生效了
+        alert("我是内部 js 代码");
+    </script>
+
+    <!-- 3. 可以将 js 代码编写到 script 标签 -->
+    <!-- <script type="text/javascript">
+        alert("我是 script 标签中的代码");
+    </script> -->
+</head>
+<body>
+    <!-- 1. 可以将 js 代码编写到标签的 onclick 属性中
+     当我们点击按钮时，js代码才会执行
+      -->
+    <button onclick="alert('讨厌，你点我干嘛')">点我一下</button>
+
+    <!-- 可以将 js 代码写在超链接的 href 属性中，这样当点击超链接时，会执行 js 代码 -->
+    <a href="javascript:alert('让你点你就点');">你也点我一下</a> 
+    <a href="javascrept:;">你也点我一下</a>
+     
+</body>
+</html>
