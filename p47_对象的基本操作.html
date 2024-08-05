@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        对象的分类
+        1. 内建对象
+        由 ES 标准中定义的对象，在任何的 ES 的实现中都可以使用
+        比如：Math String Number Boolean Function
+
+        2. 宿主对象
+        由 JS 的运行环境提供的对象，目前来讲主要指浏览器提供的对象
+        比如 BOM DOM
+
+        3. 自定义对象
+        由开发人员自己创建的对象
+        */
+
+        // 创建对象
+        /*
+        使用 new 关键字调用的函数，是构造函数 constructor。
+        构造函数是专门用来创建对象的函数
+        使用 typeof 检查 -- 对象时，会返回 Object
+        */
+        var obj = new Object();
+        console.log(obj);
+
+        // 在对象中保存的值称为属性，向对象添加属性，语法：对象.属性名 = 属性值;
+        obj.name = "孙悟空";
+        obj.gender = "男";
+        obj.age = 18;
+        console.log(obj);
+        console.log(obj.age);
+        console.log(obj.sex); // 如果对象中没有此属性，返回 undefined
+
+
+        // 删除对象的属性
+        // 语法：delete 对象.属性名
+        delete obj.name;
+        console.log(obj.name);
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
