@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        算数运算符
+        当对非 Number 类型的值进行运算时，会将这些值转换为 Number，然后运算
+        */
+       var a;
+       a = false + true;
+    //    a = 2 + null;
+       console.log(a);
+
+    // 任何值和 NaN 做运算都得 NaN
+    a = false + NaN;
+    console.log(a);
+
+    // 任何值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼接操作
+    a = "123" + 1;
+    console.log(a);
+    console.log(typeof a);
+
+    // 任何值做 * / 运算时都会自动转换为 Number 
+    var result;
+    result = 2 * "5";
+    console.log(result);
+
+    result = 12 / "5";
+    console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
