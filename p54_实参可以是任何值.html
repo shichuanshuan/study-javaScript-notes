@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 创建一个函数，可以在控制台中输出一个人的信息
+        // 实参可以是任意数据类型，也可以是一个对象
+        function sayHello(o) {
+            console.log("我是" + o.name + " 今年我" + o.age + "岁");
+        }
+        var obj = {
+            name:"孙悟空",
+            age:18
+        }
+
+        sayHello(obj);
+
+        console.log("===============");
+        // 
+        function fun(a) {
+            a(obj);
+        }
+
+        fun(sayHello);
+
+        /* 
+        sayHello()
+        调用函数
+        相当于使用函数的返回值
+
+        sayHello
+        函数对象
+        相当于直接使用函数对象
+        */
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

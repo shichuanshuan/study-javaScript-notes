@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function sum(a, b) {
+            console.log(a + b);
+        }
+
+        // 在调用函数时，可以在() 中指定实参
+        sum(1, 2);
+
+        // 调用函数时解析器不会检查实参的类型。所以要注意，是否有可能会接收到非法的参数，如果有可能则需要对参数进行类型的检查
+        sum(123, "hello");
+        sum(true, false);
+
+        // 调用函数时，解析器也不会检查实参的数量
+        // 多余的实参不会被赋值，如果实参的数量少于形参的数量，则没有对象的实参的形参将是 undefined
+        sum(12, 34, 'hello', true);
+        sum(123);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
