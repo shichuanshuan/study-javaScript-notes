@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 全局作用域在页面打开时创建，在页面关闭时销毁
+        // 在全局作用域中有一个全局对象 window。它代表的是一个浏览器的窗口，它由浏览器创建我们可以直接使用。
+        var a = 10;
+
+        // console.log(window.a); 等同于
+        console.log(a);
+
+        function fun() {
+            console.log("我是 fun 函数");
+        }
+
+        console.log(fun());
+        console.log(window.fun());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = new Object();
+
+        // 向对象中添加属性
+        obj.name = "孙悟空";
+
+        // 对象的属性值可以是任何的数据类型，也可以是个函数
+        obj.sayName = function() {
+            console.log(obj.name);
+        }
+
+        // 函数也可以称为对象的属性，如果一个函数作为一个对象的属性保存，
+        // 我们称这个函数是这个对象的方法。
+
+        obj.sayName();
+
+        // 这些都是方法
+        document.write("document 方法");
+        console.log("console 方法");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

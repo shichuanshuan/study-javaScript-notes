@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 变量的声明提前,使用 var 关键字声明的变量，会在所有的代码执行之前被申明
+
+        // window.a = 123; 等价 var a = 123;
+        console.log("a= " + a);
+        var a = 123;
+
+        // b 因为没有被 var 声明，当执行到 b 的时候会报错
+        // console.log("b= " + b);
+        // b = 123;
+
+
+        // 函数也可以被提前声明
+        fun();
+
+        // fun2 被提前申明了，声明的是变量。fun2() 是未声明
+        console.log(fun2);
+        // fun2();
+
+        // 函数声明会提前创建
+        function fun() {
+            console.log("我是一个 fun 函数");
+        }
+
+        // 函数表达式，不会提前创建
+        var fun2 = function() {
+            console.log("我是一个 fun2 函数");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
