@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 创建一个 Person 函数
+        function Person(name, age, gender) {
+            this.name = name,
+            this.age = age,
+            this.gender = gender,
+
+            // 构造函数每执行一次就会创建一个新的 sayName 方法。
+            // 也是所有实例的 sayName 都是唯一的，这样就导致了构造韩式执行一次就会创建一个
+            // 新的方法。非常浪费内存和占用性能。
+            // this.sayName = function() {
+            //     alert("hello 大家好，我是:" + this.name);
+            // }
+
+            this.sayName = fun()
+        }
+
+        // 通过共用同一个方法，从而减少函数的创建
+        function fun() {
+            alert("hello 大家好，我是:" + this.name);
+        }
+
+        var per = new Person("孙悟空", 18, "男");
+        var per2 = new Person("玉兔精", 16, "女");
+        per.sayName();
+        per2.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
