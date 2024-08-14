@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建数组
+        var arr = new Array();
+
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+
+        console.log(arr);
+
+        // 读取数组中的元素
+        // 如果读取不存在的索引，它不会报错，而是返回 undefined
+        console.log(arr[4]);
+
+        /**
+         * 获取数组的长度
+         * 可以使用 length 属性来获取数组的长度
+         * 语法：数组.length
+         * 
+         */
+
+        // 对于连续的数组，使用 length 可以获取到数组的长度（元素的个数）
+        console.log(arr.length);
+
+        // 对于非连续的数组，使用 length 会获取到数组最大的索引+1; 尽量不要创建非连续的数组
+        arr[30] = 3;
+        console.log(arr.length);
+
+
+        /**
+         * 修改 length
+         * 
+         * 如果修改的 length 大于原长度，则多出部分会空出来
+         * 如果修改的 length 小于原长度，则多出的元素会被删除
+         */
+        arr.length = 2;
+        console.log(arr);
+        console.log(arr.length);
+
+        console.log('==================');
+        arr.length = 40;
+        console.log(arr);
+        console.log(arr.length);
+
+        // 向数组的最后一个位置添加元素
+        arr[arr.length] = 70;
+        arr[arr.length] = 71;
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
