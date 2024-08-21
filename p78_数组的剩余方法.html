@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧'];
+        var arr2 = ['白骨精', '玉兔精', '蜘蛛精'];
+        var arr3 = ['二郎神', '太上老君', '玉皇大帝'];
+        /**
+         * concat() 可以连接两个或多个数组，并将新的数组返回
+         */
+        var result = arr.concat(arr2, arr3, "牛魔王", "铁扇公主");
+        console.log(result);
+
+
+        /**
+         * join()
+         * - 该方法可以将数组转换为一个字符串
+         * - 该方法不会对原数组产生影响，而是将转换后的字符串作为结果返回
+         */
+        arr = ['孙悟空', '猪八戒', '沙和尚'];
+        result = arr.join();
+        console.log(typeof result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
