@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 检查一个字符串中是否含有 .
+         * . 表示任意字符
+         * 在正则表达式中使用 \ 作为转义字符
+         * \. 来表示 .
+         */
+        var reg = /\./;
+        console.log(reg.test('b.'));
+
+        reg = /\\/;
+        console.log(reg.test('b.\\'));
+
+        /**
+         * \w
+         * - 任意字母、数字、_
+         * \W
+         * - 除了字母、数字、_
+         * 
+         * \d
+         * - 任意的数字[0-9]
+         * \D
+         * - 除了数字[0-9]
+         * 
+         * \s
+         * - 空格
+         * \S
+         * - 除了空格
+         * 
+         * \b
+         * - 单词边界，即单个单词
+         * \B
+         * - 除了单词边界
+         */
+        reg = /\w/;
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
