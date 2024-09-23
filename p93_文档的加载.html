@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档的加载</title>
+    <script>
+        // // 获取id为btn的按钮
+        // var btn = document.getElementById("btn");
+
+        // // 为按钮绑定一个单击响应函数
+        // btn.onclick = function(){
+        //     alert("hello");
+        // };
+
+        // DOM不能写在上面，除非先加载整个页面
+        // 浏览器在加载页面时，是按照自上向下的顺序加载的，读取一行就运行一行
+        // alert("hello");
+
+        // 使用 onload 先加载整个页面，这样事件会在整个页面加载完成之后才触发
+        // 这样可以确保我们的代码执行时，所有的 DOM 对象已经加载完毕了
+        window.onload = function() {
+            // 获取 id 为 btn 的按钮
+            var btn = document.getElementById("btn");
+
+            // 为按钮绑定一个单击响应函数
+            btn.onclick = function(){
+                alert("hello");
+            };
+
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <!-- <script>
+        // 获取id为btn的按钮
+        var btn = document.getElementById("btn");
+
+        // 为按钮绑定一个单击响应函数
+        btn.onclick = function(){
+            alert("hello");
+        };
+
+    </script> -->
+</body>
+</html>

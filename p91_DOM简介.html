@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    DOM 文档对象模型
+    文档
+    - 文档表示的就是整个 HTML 网页文档
+
+    对象
+    - 对象表示将网页中的每一个部分都转换为了一个对象
+
+    模型
+    - 使用模型来表示对象之间的关系，这样方面我们获取对象
+     -->
+
+
+    <!-- 
+    节点
+
+    常用节点分为四类
+    文档节点：整个 HTML 文档
+    元素节点：HTML 文档中的 HTML 标签。（<p>）
+    属性节点：元素的属性(id="pId")
+    文档节点：HTML 标签中的文本内容(this is a)
+
+    <p id="pId">this is a </p>
+    
+     -->
+
+     <button id="btn">我是一个按钮</button>
+     <script type="text/javascript">
+        /*
+        浏览器已经为我们提供 文档节点 对象这个是 window 属性
+        可以在页面中直接使用，文档节点代表的是整个网页
+        */
+       console.log(document);
+
+       // 获取到 button 对象
+       var btn = document.getElementById("btn");
+       console.log(btn)
+
+       // 修改按钮的文字，确实我们找按钮的对不对
+       btn.innerHTML = "i'm button";
+     </script>
+</body>
+</html>
