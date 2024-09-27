@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM查询3</title>
+    <script>
+        // 针对的是元素节点
+        // 1. parentNode 属性 表示当前节点的父节点
+        // 2. previousSibling 属性 表示当前节点的前一个兄弟节点
+        // 3. nextSibling 属性 表示当前节点的后一个兄弟节点
+
+        /*
+        定义一个函数，专门用来为指定元素绑定单击响应函数
+        参数:
+            idStr 要绑定单一响应函数的对象的id属性值
+            fun 事件的回调函数，当单击元素时，该函数将会被触发
+        */
+       function myClick(idStr, fun) {
+        var btn = document.getElementById(idStr);
+
+        btn.onclick = fun;
+       }
+
+        // 首先就把 window.onload 写上
+        window.onload = function() {
+            
+            // 7. 返回#bj的父节点</button></div>
+            myClick("btn07", function() {
+                // alert("hello");
+                var bj = document.getElementById("bj");
+
+                var pn = bj.parentNode;
+                // alert(pn.innerHTML);
+
+                /**
+                 * innerText
+                 * - 该属性可以获取到元素内部的文本内容
+                 * - 它和 innerHTML 类似，不同的是它会自动将 html 去除
+                */
+               alert(pn.innerText);
+            });
+
+
+            // 8. 返回#android的前一个兄弟节点</button></div>
+            myClick("btn08", function(){
+                var and = document.getElementById("android");
+
+                // 返回 #android 的前一个兄弟节点（也可以能获取到空白的文本）
+                var ps = and.previousSibling;
+                // alert(ps);
+
+                // perviousElementSibling获取前一个兄弟元素，IE8及一下不支持
+                var pe = and.previousElementSibling;
+                alert(pe.innerHTML);
+                
+            });
+
+
+            // 9. 返回#username的value属性值</button></div>
+            myClick("btn09", function(){
+                var um = document.getElementById("username");
+
+                // 文本框的 value 属性值，就是文本框中填写的内容
+                alert(um.value);
+            });
+
+
+            // 10. 设置#username的value属性值</button></div>
+            myClick("btn10", function(){
+                var um = document.getElementById("username");
+                um.value = "今天天气真不错~~~"
+            });
+
+
+            // 11. 返回#bj的文本值</button></div>
+            myClick("btn11", function(){
+                var bj = document.getElementById("bj");
+
+                // alert(bj.innerHTML);
+                alert(bj.innerText);
+            });
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>你喜欢哪个城市？</p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <p>
+                你喜欢哪款单机游戏？
+            </p>
+
+            <ul>
+                <li id="hj">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+        </div>
+            
+        <br>
+        <br>
+
+        <div>
+            <p>
+                你手机的操作系统是？
+            </p>
+
+            <ul id="phone">
+                <li>IOS</li><li id="android">Android</li><li>Window Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input type="radio" name="gender" value="male">
+            Male
+            <input type="radio" name="gender" value="female">
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde">
+        </div>
+    </div>
+
+    <div id="btnList">
+        <div><button id="btn07">7 返回#bj的父节点</button></div>
+        <div><button id="btn08">8 返回#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">9 返回#username的value属性值</button></div>
+        <div><button id="btn10">10 设置#username的value属性值</button></div>
+        <div><button id="btn11">11 返回#bj的文本值</button></div>
+    </div>
+</body>
+</html>

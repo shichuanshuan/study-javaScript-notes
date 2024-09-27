@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom查询1</title>
+    <script>
+        // 针对的是 document 对象节点
+        // 1. getElementById() 通过 id 属性获取一个元素节点对象
+        // 2. getElementsByTagName() 通过标签名获取一组元素节点对象
+        // 3. getElementsByName() 通过 name 属性获取一组元素节点对象
+
+        // 首先就把 window.onload 写上
+        window.onload = function() {
+            // 1. 查找#bj节点
+            // 为 id 为 btn01 的按钮绑定一个单击响应函数
+            var btn01 = document.getElementById('btn01');
+            btn01.onclick = function() {
+                // alert("hello");
+                var bj = document.getElementById('bj');
+                alert(bj.innerHTML);
+            };
+
+
+            // 2. 查找所有li节点</button></div>
+            // 为 id 为 btn02 的按钮绑定一个单击响应按钮
+            btn02.onclick = function() {
+                // 查看所有 li 节点
+                var lis = document.getElementsByTagName("li");
+
+                for (var i = 0; i < lis.length; i++) {
+                    alert(lis[i].innerHTML);
+                }
+            };
+
+
+            // 3. 查找name=gender的所有节点</button></div>
+            // 为 id 为 btn03 的按钮绑定一个单击响应按钮
+            btn03.onclick = function() {
+                var name = document.getElementsByName('gender');
+
+                for (var i = 0; i < name.length; i++) {
+                    /*
+                    如果需要读取元素节点属性
+                        直接使用 元素.属性名
+                        例如：元素.id 元素.name 元素.value
+
+                        注意：class 属性不能采用这种方式，读取 class 属性是需要使用 className
+                    */
+                    alert(name[i].value);
+                }
+            };
+
+
+            // 4. 查找#city下所有li节点</button></div>
+            // 5. 返回#city的所有子节点</button></div>
+            // 6. 返回#phone的第一个子节点</button></div>
+            // 7. 返回#bj的父节点</button></div>
+            // 8. 返回#android的前一个兄弟节点</button></div>
+            // 9. 返回#username的value属性值</button></div>
+            // 10. 设置#username的value属性值</button></div>
+            // 11. 返回#bj的文本值</button></div>
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>你喜欢哪个城市？</p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <p>
+                你喜欢哪款单机游戏？
+            </p>
+
+            <ul>
+                <li id="hj">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+        </div>
+            
+        <br>
+        <br>
+
+        <div>
+            <p>
+                你手机的操作系统是？
+            </p>
+
+            <ul>
+                <li id="phone">IOS</li>
+                <li>Android</li>
+                <li>Window Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input type="radio" name="gender" value="male">
+            Male
+            <input type="radio" name="gender" value="female">
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde">
+        </div>
+    </div>
+
+    <div id="btnList">
+        <div><button id="btn01">1 查找#bj节点</button></div>
+        <div><button id="btn02">2 查找所有li节点</button></div>
+        <div><button id="btn03">3 查找name=gender的所有节点</button></div>
+    </div>
+</body>
+</html>

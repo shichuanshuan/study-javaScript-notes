@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom查询2</title>
+    <script>
+        // 针对的是元素节点
+        // 4. getElementsByTagName() 方法 返回当前节点的指定标签名后代节点
+        // 5. childNodes 属性 表示当前节点的所有子节点
+        // 6. firstChild 属性 表示当前节点的第一个子节点
+        // 7. lastChild  属性 表示当前节点的最后一个子节点
+
+        // 首先就把 window.onload 写上
+        window.onload = function() {
+            // 4. 查找#city下所有li节点</button></div>
+            // 为 id 为 btn04 的按钮绑定一个单击响应函数
+            var btn04 = document.getElementById('btn04');
+            btn04.onclick = function() {
+                // 获取id为city的元素
+                var city = document.getElementById("city");
+
+                // 查找#city下所有 li 节点
+                var lis = city.getElementsByTagName("li");
+
+                for (var i = 0; i < lis.length; i++) {
+                    alert(lis[i].innerHTML);
+                }
+
+            }
+
+
+            // 5. 返回#city的所有子节点</button></div>
+            var btn05 = document.getElementById("btn05");
+            btn05.onclick = function() {
+                // 获取 id 为 city 的节点
+                var city = document.getElementById("city");
+                
+                /*
+                childNodes 属性会获取包括文本节点在内的所有节点
+                根据 DOM 标签标签间空白也会当成文本节点
+                注意：在 IE8 及一下的浏览器中，不会将空白文本当成子节点。
+                所以该属性在IE8中会返回4个子元素而其他浏览器是9个
+                */
+                var cns = city.childNodes;
+                // alert(cns.length);
+
+                /*
+                children属性可以获取当前元素的所有子元素
+                */
+               var cns2 = city.children;
+               alert(cns2.length);
+            }
+
+
+            // 6. 返回#phone的第一个子节点</button></div>
+            var btn06 = document.getElementById("btn06");
+            btn06.onclick = function() {
+                var phone = document.getElementById("phone");
+
+                // chi = phone.childNodes[0];
+                // alert(chi.innerHTML);
+
+                // firstChild 可以获取到当前元素的第一个子节点(包括空白文本节点)
+                var fir = phone.firstChild;
+
+                /*
+                firstElementChild 获取当前元素第一子元素
+
+                firstElementChild 不支持 IE8 及一下的浏览器
+                如果需要兼容他们尽量不要使用
+                */
+                fir = phone.firstElementChild;
+
+                alert(fir.innerHTML);
+            }
+            // 7. 返回#bj的父节点</button></div>
+            // 8. 返回#android的前一个兄弟节点</button></div>
+            // 9. 返回#username的value属性值</button></div>
+            // 10. 设置#username的value属性值</button></div>
+            // 11. 返回#bj的文本值</button></div>
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>你喜欢哪个城市？</p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <p>
+                你喜欢哪款单机游戏？
+            </p>
+
+            <ul>
+                <li id="hj">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+        </div>
+            
+        <br>
+        <br>
+
+        <div>
+            <p>
+                你手机的操作系统是？
+            </p>
+
+            <ul id="phone">
+                <li>IOS</li><li>Android</li><li>Window Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input type="radio" name="gender" value="male">
+            Male
+            <input type="radio" name="gender" value="female">
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde">
+        </div>
+    </div>
+
+    <div id="btnList">
+        <div><button id="btn04">4 查找#city下所有li节点</button></div>
+        <div><button id="btn05">5 返回#city的所有子节点</button></div>
+        <div><button id="btn06">6 返回#phone的第一个子节点</button></div>
+        <div><button id="btn07">7 返回#bj的父节点</button></div>
+        <div><button id="btn08">8 返回#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">9 返回#username的value属性值</button></div>
+        <div><button id="btn10">10 设置#username的value属性值</button></div>
+        <div><button id="btn11">11 返回#bj的文本值</button></div>
+    </div>
+</body>
+</html>

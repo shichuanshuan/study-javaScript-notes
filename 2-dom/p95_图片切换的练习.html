@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换的练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 500px;
+            margin:0 auto;
+            padding: 10px;
+            background-color: aqua;
+            /* 设置文本居中 */
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            // 点击按钮切换图片
+
+            // 获取两个按钮
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+
+            // 获取 img 标签，标签的返回值是数组，而此代码中 img 标签只有一个，因此可以指定[0]
+            var img = document.getElementsByTagName('img')[0];
+
+            // 创建一个数组，用来保存图片的路径
+            var imgArr = ['../imgs/image.png', '../imgs/image1.png', '../imgs/image2.png']
+
+            var index = 0;
+
+            // 分别为两个按钮绑定单击响应函数
+            prev.onclick = function() {
+                index--;
+
+                if (index < 0 ) {
+                    index = 0;
+                }
+
+                // alert("上一张");
+                img.src = imgArr[index]
+            };
+
+            next.onclick = function() {
+                index++;
+
+                if (index > imgArr.length - 1) {
+                    index = imgArr.length - 1;
+                }
+                // alert("下一张");
+
+                // 切换图片就是修改 img 的 src 属性
+                // 要修改一个元素的属性 元素.属性 = 属性值
+                img.src = imgArr[index]
+            };
+
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <img src="../imgs/image.png" alt="老鼠">
+
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+</html>
