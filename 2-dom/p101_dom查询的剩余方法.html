@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom查询的剩余方法</title>
+    <script>
+        window.onload = function() {
+            // 获取 body 标签
+            var body = document.getElementsByTagName("body")[0];
+
+            /**
+             * 在 document 中有一个属性 body，它保存的是 body 的引用
+             * */
+            var body = document.body;
+            console.log(body);
+            console.log("1 =======================");
+
+            /**
+             * document.documentElement 保存的是 html 跟标签
+             * */
+            var html = document.documentElement;
+            console.log(html);
+
+
+            console.log("2 =======================");
+            /**
+             * document.all 代表页面中所有的元素
+            */
+           var all = document.all;
+
+           for (var i = 0; i < all.length; i++) {
+            console.log(all[i]);
+           }
+
+
+           console.log("3 =======================");
+           /**
+            * 根据元素的 class 属性查询一组元素节点对象
+            * getElementsByClassName() 可以根据 class 属性值获取一组元素节点对象
+            * 但是该方法不支持 IE8 及一下的浏览器
+           */
+          var box1 = document.getElementsByClassName("box1");
+          console.log(box1.length);
+
+
+            // 获取页面中的所有的 div
+            var divs = document.getElementsByTagName("div");
+
+            
+            console.log("4 =======================");
+            /**
+             * 获取 class 为 box1 中的所有的 div
+             * .box div
+             * 
+             * document.querySelector()
+             * - 需要一个选择器的字符串作为参数，可以根据一个 CSS 选择器来查询一个元素节点对象.
+             * - 虽然IE8中没有 getElementsByClassName() 但是可以用 querySelector 代替，
+             * - 使用该方法总会返回唯一的一个元素，如果满足条件的元素有多个，那么它只会返回第一个
+            */
+           var div = document.querySelector(".box1 div");
+           console.log(div.innerHTML);
+
+           var box1 = document.querySelector(".box1");
+           console.log(box1);
+
+
+           console.log("5 =======================");
+           /**
+            * document.querySelectorAll()
+            * - 该方法和 querySelector() 用法类型，不同的是它会将符合条件的元素封装到一个数组中返回.
+           */
+          var box1 = document.querySelectorAll(".box1");
+          console.log(box1);
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div>我是 box1 中的 div1</div>
+    </div>
+    <div class="box1">
+        <div>我是 box1 中的 div2</div>
+    </div>
+    <div class="box1">
+        <div>我是 box1 中的 div3</div>
+    </div>
+</body>
+</html>
