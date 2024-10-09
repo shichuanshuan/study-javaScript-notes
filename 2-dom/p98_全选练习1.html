@@ -18,6 +18,49 @@
                 }
             }
 
+            // 2. 全不选按钮
+            var checkedNoBtn = document.getElementById("checkedNoBtn");
+            checkedNoBtn.onclick = function() {
+                var items = document.getElementsByName("items");
+
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = false;
+                }
+            }
+
+            // 3. 反选
+            var checkedRevBtn = document.getElementById("checkedRevBtn");
+            checkedRevBtn.onclick = function() {
+                var items = document.getElementsByName("items");
+
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = !items[i].checked;
+                }
+            }
+
+            // 4. 提交
+            var sendBtn = document.getElementById("sendBtn");
+            sendBtn.onclick = function() {
+                var items = document.getElementsByName("items");
+
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].checked) {
+                        alert(items[i].value);
+                    }
+                }
+            }
+
+            // 5. 全选 / 全不选
+            var checkedAllBox = document.getElementById("checkedAllBox");
+            checkedAllBox.onclick = function() {
+                var items = document.getElementsByName("items");
+                
+                // 设置多选框的选中状态
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = checkedAllBox.checked;
+                    // items[i].checked = this.checked;
+                }
+            }
         }
     </script>
 </head>
