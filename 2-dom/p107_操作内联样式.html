@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作内联样式</title>
+    <style type="text/css">
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            /**
+             * 点击按钮以后,修改 box1 的大小
+            */
+
+            // 获取 box1
+            var box1 = document.getElementById("box1");
+
+            // 为按钮绑定单击响应函数
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function() {
+                /**
+                 * 修改 box1 的宽度
+                 * 
+                 * 通过 JS 修改元素的样式
+                 * 语法: 元素.style.样式名 = 样式值
+                 * 
+                 * 注意: 如果 CSS 的样式名中含有 -,这种名称在 JS 中是不合法的
+                 * 比如: background-color 需要将这种样式名修改为驼峰命名法.
+                 * 
+                 * 我们通过 style 属性设置的样式都是内联样式,而内联样式有较高的优先级,所以通过 JS 
+                 * 修改的样式往往会立即显示.
+                 * 
+                 * 
+                */
+               box1.style.width = "300px";
+               box1.style.height = "300px";
+               box1.style.backgroundColor = "yellow";
+            }
+
+
+            // 读取样式值
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function() {
+                /**
+                 * 语法: 元素.style.样式名
+                 * 
+                 * 通过 style 属性设置和读取的都是内联样式;
+                 * 无法读取样式表中的样式
+                */
+
+                alert(box1.style.width);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <button id="btn02">点我一下</button>
+    <br/>
+    <div id="box1"></div>
+</body>
+</html>
