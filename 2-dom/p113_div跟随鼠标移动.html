@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /**
+            开启 box1 的绝对位置
+            */
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            /**
+             * 使 div 可以跟随鼠标移动
+            */
+
+            // 获取 box1
+            var box1 = document.getElementById("box1");
+            document.onmousemove = function(event) {
+                // 解决兼容问题
+                event = event || window.event;
+
+                /** 获取滚动条滚动的距离
+                 * 
+                 * chrome 认为浏览器的滚动条是 body 的，可以通过 body.scrollTop 来获取
+                 * 火狐等浏览器认为浏览器的滚动条时 html 的
+                 * 
+                */
+               var st = document.body.scrollTop || document.documentElement.scrollTop;
+               var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                // 获取到鼠标的坐标
+                /**
+                 * clientX 和 clientY
+                 * 用于获取鼠标当前的可见窗口的坐标
+                 * 
+                 * div的偏移量，是相对于整个页面的
+                */
+                // var left = event.clientX;
+                // var top = event.clientY;
+
+                /**
+                 * pageX 和 pageY 可以获取鼠标相对于当前页面的坐标
+                 * 但是这两个属性在 IE8 中不支持，所有如果需要兼容 IE8，则不要使用
+                 */
+                // var left = event.pageX;
+                // var top = event.pageY;
+
+                var left = event.clientX;
+                var top = event.clientY;
+
+                // 设置 div 的偏移量
+                box1.style.left = left + sl + "px";
+                box1.style.top = top + st + "px";
+            }
+        }
+    </script>
+</head>
+<body style="height: 2000px; width: 2000px;">
+    <div id="box1"></div>
+</body>
+</html>
