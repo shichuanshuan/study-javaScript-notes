@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的冒泡</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+
+        #s1 {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // 为 s1 绑定一个单击响应函数
+            var s1 = document.getElementById("s1");
+            s1.onclick = function() {
+                alert("我是 span 的单击响应元素");
+            }
+
+            // 为 box1 绑定一个单击响应元素
+            var box1 = document.getElementById("box1");
+            box1.onclick = function() {
+                alert("我是 box1 的单击响应元素");
+            }
+
+            // 为 body 绑定一个单击响应元素
+            document.body.onclick = function() {
+                alert("我是 body 的单击响应元素");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        我是box1
+        <span id="s1">我是span</span>
+    </div>
+</body>
+</html>
