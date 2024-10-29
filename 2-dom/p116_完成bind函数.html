@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的绑定-完成bind函数</title>
+    <script>
+        window.onload = function() {
+            /**
+             * 点击按钮以后弹出来一个内容
+             * 
+            */
+           // 获取按钮对象
+           var btn01 = document.getElementById("btn01");
+           
+        //    btn01.attachEvent("onclick", function() {
+        //     alert(this);
+        //     });
+
+        //     btn01.addEventListener("click", function() {
+        //         alert(this);
+        //     }, false);
+            
+            bind(btn01, "click", function(){
+                alert(this);
+            })
+
+        }
+
+        /**
+         * 定义一个函数，用来为指定元素绑定响应函数
+         * addEventListener() 中的this，是绑定事件的对象
+         * attachEvent() 中的 this 是 window
+         * 需要统一两个方法this
+         * 
+         * 参数：
+         * obj 要绑定事件的对象
+         * eventStr  事件的字符串(不要 on)
+         * callback 回调函数
+        */
+       function bind(obj, eventStr, callback) {
+        if (obj.addEventListener) {
+            obj.addEventListener(eventStr, callback, false);
+        } else {
+            /**
+             * this 是由谁调用方式决定
+             * callback.call(obj)
+            */
+            // IE8 及以下
+            obj.attachEvent("on"+eventStr, function() {
+                // 在匿名函数中调用函数
+                callback
+            });
+        }
+       }
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+</body>
+</html>
