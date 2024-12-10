@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+    <script>
+        window.onload = function() {
+            /**
+             * 键盘事件
+             * onkeydown
+             *  - 按键被按下
+             *  - 对于 onkeydown 来说，如果一致按着某个按键不松手，则事件会一直触发
+             *  - 当 onkeydown 连续触发时，第一次和第二次之间会间隔稍微长一点，其他的会非常快
+             * 
+             * onkeyup
+             *  - 按键被松开
+             * 
+             * 
+             * 键盘事件一般都会绑定给一些可以获取到焦点的对象
+            */
+
+            document.onkeydown = function(event) {
+                // console.log("按键被按下了");
+                event = event || window.event;
+
+                /**
+                 * 可以通过 keyCode 来获取按键的编码
+                 * 通过它可以判断哪个按键被按下
+                 * 
+                 * 除了 keyCode，事件对象中还提供了几个属性
+                 * altKey
+                 * ctrlKey
+                 * shiftKey
+                 *  - 这三个用来判断 alt、ctrl和shift是否被按下
+                 *      如果按下则返回 true，否则返回 false
+                */
+
+                if (event.keyCode == 89 && event.ctrlKey) {
+                    console.log("ctrl 和 y 被按下了..")
+                }
+
+                console.log(event.keyCode);
+            }
+
+            // document.onkeyup = function() {
+            //     console.log("按键被松开了");
+            // }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>
