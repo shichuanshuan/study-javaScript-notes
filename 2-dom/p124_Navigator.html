@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator</title>
+    <script>
+        /**
+         * BOM
+         * - 浏览器对象模型
+         * - BOM 可以使我们通过 JS 来操作浏览器
+         * - 在 BOM 中为我们提供一组对象，用来完成对浏览器的操作
+         * - BOM 对象
+         *      Window
+         *      - 代表的是整个浏览器的窗口，同时 window 也是网页中的全局对象
+         *      Navigator
+         *      - 代码的是当前浏览器的信息，通过该对象可以来识别不同的浏览器。比如：识别火狐、Google...
+         *      Location
+         *      - 代表当前浏览器的地址信息，通过 Location 可以获取地址栏信息，或者草走浏览器跳转页面
+         *      History
+         *      - 代表浏览器的历史记录，可以通过该对象来操作浏览器的历史记录
+         *          由于隐私原因，该对象不能获取到具体的历史记录，只能操作浏览器向前或向后翻页
+         *          而且该操作只在当前访问时有效，即网页关闭后，再打开无法向前或向后
+         *      Screen
+         *      - 代表用户的屏幕的信息，通过该对象可以获取到用户的显示器的相关的信息
+         * 
+         * 
+         * 这些 BOM 对象在浏览器中都是作为 window 对象的属性保存的，
+         * 可以通过window对象来使用，也可以直接使用
+        */
+
+        // 这几种调用方式都可以，首字母要小写
+        // console.log(window.navigator);
+        // console.log(navigator);
+        // console.log(location);
+        // console.log(history);
+
+        /**
+         * Navigator
+         * - 代码的是当前浏览器的信息，通过该对象可以来识别不同的浏览器。
+         * - 由于历史原因，Navigator 对象中的大部分属性都已经不能帮助我们识别浏览器了
+         * - 一般我们只会使用 userAgent 来判断浏览器的信息
+         *      userAgent 是一个字符串，这个字符串中包含有用来描述浏览器信息的内容
+         *      不同浏览器会有不同的 userAgent
+         * 
+         * 火狐 userAgent
+         * Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0
+         * 
+         * Chrome userAgent
+         * Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+        */
+       var us = navigator.userAgent;
+       console.log(us);
+
+       if (/firefox/i.test(us)) {
+        alert("你是火狐");
+       } else if (/chrome/i.test(us)) {
+        alert("你是Chrome");
+       } else if (/msie/i.test(ua)) {
+        alert("你是IE浏览器");
+       }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

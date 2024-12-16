@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator2</title>
+    <script>
+        /**
+         * 如果通过 UserAgent 不能判断，还可以通过一些浏览器中持有的对象，来判断浏览器的信息
+         * 比如：ActiveXObject
+        */
+       if ("ActiveXObject" in window) {
+        alert("你是IE，我已经抓住你了");
+       } else {
+        alert("你不是IE");
+       }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
