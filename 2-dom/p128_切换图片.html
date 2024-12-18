@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换图片</title>
+    <script>
+        window.onload = function() {
+            /**
+             * 图片可以自动切换
+            */
+
+            var img1 = document.getElementById("img1");
+
+            var imgArr = ["../imgs/image.png", "../imgs/image1.png", "../imgs/image2.png"]
+
+            var index = 0;
+
+            /**
+             * 开启定时器，来自动切换图片
+            */
+
+            setInterval(function(){
+
+                index++;
+
+                index = index % imgArr.length;
+
+                img1.src = imgArr[index];
+            }, 1000);
+
+            
+        }
+    </script>
+</head>
+<body>
+    <img id="img1" src="../imgs/image.png">
+</body>
+</html>

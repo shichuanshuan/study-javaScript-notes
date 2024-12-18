@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换图片2</title>
+    <script>
+        window.onload = function() {
+            /**
+             * 添加开始和停止按钮
+            */
+
+            var img1 = document.getElementById("img1");
+
+            var imgArr = ["../imgs/image.png", "../imgs/image1.png", "../imgs/image2.png"]
+
+            var index = 0;
+            var timer;
+
+            var btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function() {
+                /**
+                 * 目前我们每点击一次按钮，就会开启一个定时器
+                 * 点击多次就会开启多个定时器，这就是导致图片的切换速度过快
+                 * 并且我们只能关闭最后一次开启的定时器
+                */
+
+                // 在开始前，需要将上一个定时器关闭
+                clearInterval(timer);
+
+
+                /**
+                 * 开启定时器，来自动切换图片
+                */
+
+                timer = setInterval(function(){
+
+                    index++;
+
+                    index = index % imgArr.length;
+
+                    img1.src = imgArr[index];
+                }, 1000);
+
+            }
+
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function() {
+                // 点击按钮以后，停止图片的自动切换，关闭定时器
+                /**
+                 * clearInterval() 可以接收任意参数
+                 * 如果参数师一个有效的定时器标识，则停止对应的定时器
+                 * 如果参数不是一个有效的标识，则什么也不做
+                */
+                clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="img1" src="../imgs/image.png">
+    <button id="btn01">开始</button>
+    <button id="btn02">停止</button>
+</body>
+</html>
