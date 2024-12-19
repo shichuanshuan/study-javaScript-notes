@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改div移动</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute; /* 使div可以移动 */
+        }
+    </style>
+    <script>
+        /** 
+         * div 刚开始移动，会有卡顿的现象
+        */
+        window.onload = function() {
+            // 创建一个变量表示方向。通过修改 dir 来影响移动的方向
+            var dir = 0;
+            
+            // 定义一个变量，来表示移动长度
+            var speed = 10;
+
+            // 开启一个定时器，来控制 div 的移动。通过定时器来影响 div 的速度
+            setInterval(function() {
+                /**
+                 * 37 左
+                 * 38 上
+                 * 39 右
+                 * 40 下
+                */
+               switch(dir) {
+                case 37:
+                    box1.style.left = box1.offsetLeft - speed + "px";
+                    console.log(box1.style.left)
+                    break;
+                case 39:
+                    box1.style.left = box1.offsetLeft + speed + "px";
+                    console.log(box1.style.left)
+                    break;
+                case 38:
+                    box1.style.top = box1.offsetTop - speed + "px";
+                    break;
+                case 40:
+                    box1.style.top = box1.offsetTop + speed + "px";
+                    break;
+               };
+
+            }, 30);
+            
+            document.onkeydown = function(event) {
+                event = event || window.event;
+
+                // 当用户按下 ctrl 以后，速度加快
+                if (event.ctrlKey) {
+                    speed = 50;
+                } else {
+                    speed = 10;
+                }
+
+                dir = event.keyCode;
+            }
+
+            // 当按键松开时，div不再移动
+            document.onkeyup = function() {
+                dir = 0;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>
