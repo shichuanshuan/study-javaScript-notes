@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图 - css 学完后补充</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /*
+        * 设置 outer 的样式
+        */
+        #outer {
+            /* 设置宽和高 */
+            width: 700;
+            height: 7200;
+
+            /* 居中 */
+            margin: 50px auto;
+
+            /* 设置背景颜色 */
+            background-color: greenyellow;
+
+            /* 设置 padding */
+            padding: 10px 0;
+        }
+
+        #imgList {
+            /* 去除项目符合 */
+            list-style: none;
+
+            /* 设置 ul 的宽度 */
+            width: 2500px;
+        }
+
+        /* 设置图片中的 li */
+        #imgList li {
+            /* 设置浮动 */
+            float: left;
+
+            /* 设置左右外边距 */
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 创建一个外部的 div，来作为大的容器 -->
+     <div id="outer">
+        <!-- 创建一个ul, 用于放置图片 -->
+         <ul id="imgList">
+            <li><img src="../imgs/image.jpg"></li>
+            <li><img src="../imgs/image1.jpg"></li>
+            <li><img src="../imgs/image2.jpg"></li>
+            <li><img src="../imgs/image3.jpg"></li>
+         </ul>
+     </div>
+</body>
+</html>
